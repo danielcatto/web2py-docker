@@ -1,0 +1,8 @@
+{{extend 'base.html'}}
+{{block central}}
+    {{for cliente in cli:}}
+        {{ =cliente.id }} {{ =cliente.nome }}
+    
+    {{pass}}
+    <p><a href="{{=URL('default','cart_form.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Fechar</a></p>
+{{pass}}

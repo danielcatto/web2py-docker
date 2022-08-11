@@ -1,0 +1,15 @@
+
+{{extend 'base.html'}}
+
+{{block central}}
+
+<h1>Categorias</h1>
+
+<a href="{{=URL('products','category_registration.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Nova Categoria</a>
+
+{{ for categoria in categorias: }}
+	<p>{{=categoria.nome_categoria}}</p>
+{{pass}}
+
+
+{{end}}

@@ -1,0 +1,19 @@
+{{extend 'base.html'}}
+
+{{block central}}
+
+<h1>Vendas</h1>
+
+<div class="col-auto">
+<table border="0" width="800">
+	<tr align="center">
+		<td><a href="{{=URL('default','cart_form.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Vender</a></td>
+		<td><a href="{{=URL('default','caixa.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Caixa</a></td>
+	</tr>
+ </table>
+
+
+
+
+</div>
+{{end}}

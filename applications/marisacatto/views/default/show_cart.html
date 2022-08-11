@@ -1,0 +1,36 @@
+{{extend 'base.html'}}
+{{block central}}
+
+    {{if not cart:}}
+        Carrinho vazio <Br><br>
+
+    {{else:}}
+
+    <table width=800px>
+    
+        <tr>
+            <td>Id</td>
+            <td>nome </td>
+            <td>valor </td>
+            <td>quantidade </td>
+            <td>sub_total </td>
+            
+        </tr>
+        {{if session.cart:}}
+        {{ for lista in range(len(cart)): }}
+        <tr>
+            <td>{{ =cart[lista][0] }} </td>
+            <td>{{ =cart[lista][1] }} </td>
+            <td>{{ =cart[lista][2] }}</td>
+            <td>{{ =cart[lista][3] }}</td>
+            <td>{{ =cart[lista][4] }}</td>
+        {{ pass }}
+        {{pass}}
+        </tr>
+      
+    </table>
+    {{pass}}
+<br>
+<a href="{{=URL('customer','customers.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Fechar</a>
+<a href="{{=URL('default','delete_cart')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Apagar Carrinho</a>
+{{end}}

@@ -1,0 +1,20 @@
+{{extend 'base.html'}}
+
+{{block central}}
+
+<h1>Gerenciar Produtos</h1>
+
+<div class="col-auto">
+<table border="0" width="800">
+	<tr align="center">
+		<td><a href="{{=URL('default','cadastro_produto.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Cadastro de Produtos</a></td>
+		<td><a href="{{=URL('default','produtos.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Produtos</a></td>
+		<td><a href="{{=URL('default','categorias.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Categorias</a></td>
+	</tr>
+ </table>
+
+
+
+
+</div>
+{{end}}

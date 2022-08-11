@@ -1,0 +1,41 @@
+{{extend 'base.html'}}
+
+{{block central}}
+<h2>Detalhe Do Produto</h2>
+{{for produto in produtos:}}
+<table border="0" width="1200px">
+    <tr>
+        <td width="20px">ID</td>
+        <td>{{=produto.id}}</td>
+        <td>Nome</td>
+        <td>{{=produto.nome}}</td>
+
+    </tr>
+
+    <tr>
+        <td>Valor</td>
+        <td width="100px">{{=produto.valor}}</td>
+        <td width="100px">Quantidade</td>
+        <td>{{=produto.quantidade}}</td>
+        
+    </tr>
+    <tr>
+        <td><a href="{{=URL('product_edit', args=produto.id)}}">Editar</a></td>
+    </tr>
+</table>
+<table>
+    <tr>
+        {{if produto.imagemdoproduto:}}
+        
+        <td><img src="{{=URL('default', 'download', args=produto.imagemdoproduto)}}"></tr>
+        {{else:}}
+        <td><img src="{{=URL('static', 'img_produto/sem_imagem.jpg')}}"></tr>
+        {{pass}}
+    </tr>
+
+    
+{{pass}}
+</table>
+
+
+{{end}}

@@ -1,0 +1,39 @@
+{{extend 'base.html'}}
+{{block central}}
+
+{{ if not session.cliente:}}
+    {{ =form }}
+{{pass}}
+
+
+{{=form_product}}
+
+
+{{ if session.cliente:}}
+Cliente: {{ =session.cliente[0]}} - {{ =session.cliente[1]}}<br>
+{{pass}}
+<table width=800px>
+    
+    <tr>
+        <td>Id</td>
+        <td>valor </td>
+        <td>Quantidade </td>
+        <td>Sub_total </td>
+        
+    </tr>
+    {{ for lista in range(len(session.cart)): }}
+    <tr>
+        <td>{{ =session.cart[lista][0] }} </td>
+        <td>{{ =session.cart[lista][1] }} </td>
+        <td>{{ =session.cart[lista][2] }}</td>
+        <td>{{ =session.cart[lista][3] }}</td>
+    {{ pass }}
+    </tr>
+  
+</table>
+
+
+total{{ =session.sub }}
+<Br>
+<a href="{{=URL('default','finalizar.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Finalizar</a>
+{{end}}

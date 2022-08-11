@@ -1,0 +1,40 @@
+{{extend 'base.html'}}
+
+{{block central}}
+
+<form action="#" enctype="multipart/form-data" method="post">
+
+    <label>Nome-:
+    <input name="nome"></label><br />
+
+    <label>CPF:
+    <input name="cpf"/></label><br />
+    
+    <label>Cep:
+    <input name="cep" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" /></label><br />
+    
+    <label>logradouro:
+    <input name="logradouro"  id="rua" size="60" /></label><br />
+
+    <label>Numero:
+    <input name="Numero"  id="numero" size="6"  /></label><br />
+    
+    <label>Bairro:
+      <input name="bairro"  id="bairro" size="40"/></label><br />
+      
+    <label>Cidade:
+    <input name="cidade"  id="cidade" size="40" /></label><br />
+    
+    <label>UF:
+    <input name="uf"  id="uf" size="2"  /></label><br />
+
+    <label>Data:
+    <input name="data"  id="data" size="10"  /></label><br />
+  
+
+    <input type="submit" />
+    <input type="hidden" name="_formname" value="test" />
+  </form>
+
+
+{{ end }}

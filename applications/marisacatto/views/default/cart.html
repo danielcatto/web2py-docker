@@ -1,0 +1,25 @@
+{{extend 'base.html'}}
+{{block central}}
+
+<table width=800px>
+    <tr  bgcolor="silver">
+        <td>Id</td>
+        <td>nome </td>
+        <td>valor </td>
+        <td>quantidade </td>
+        <td>sub_total </td>       
+    </tr>
+    {{if session.cart:}}
+    {{ for lista in range(len(cart)): }}
+    <tr>
+        <td>{{ =cart[lista][0] }} </td>
+        <td>{{ =cart[lista][1] }} </td>
+        <td>{{ =cart[lista][2] }}</td>
+        <td>{{ =cart[lista][3] }}</td>
+        <td>{{ =cart[lista][4] }}</td>
+    {{ pass }}
+    {{pass}}
+    </tr>
+</table>
+<a href="{{=URL('default','finalizar.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Finalizar</a>
+{{end}}

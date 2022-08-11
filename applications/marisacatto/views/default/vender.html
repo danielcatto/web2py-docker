@@ -1,0 +1,23 @@
+{{extend 'base.html'}}
+{{block central}}
+
+{{=form}}
+
+<div id='itens_prod'>	
+		{{ for i in range(len(session.carrinho)): }}
+<lo>
+	<li>
+		nome: {{ =session.carrinho[i][0][0]['nome'] }}
+		preço: {{ =session.carrinho[i][0][0]['valor'] }} X {{ =session.carrinho[i][1] }} = {{=session.carrinho[i][2]}}
+		
+		{{pass}}
+		
+	</li>
+</lo>
+total: {{ =session.sub }}	
+</div>
+
+
+
+<a href="{{=URL('venda','finalizar.html')}}" class="btn btn-primary mx-2 px-5 mb-3 aos-init aos-animate">Finalizar</a>
+{{end}}

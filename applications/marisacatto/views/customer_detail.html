@@ -1,0 +1,49 @@
+{{extend 'base.html'}}
+
+{{block central}}
+<h2>Lista dos Clientes</h2>
+{{for i in cli:}}
+<table border="0" width="1200px" pading="0">
+    <tr>
+        <td>ID</td>
+        <td>{{=i.id}}</td>
+        <td>Nome</td>
+        <td>{{=i.nome}}</td>
+
+    </tr>
+
+    <tr>
+        <td>RG</td>
+        <td>{{=i.rg}}</td>
+        <td>CPF</td>
+        <td>{{=i.cpf}}</td>
+
+    </tr>
+
+    <tr>
+        <td>Logradouro</td>
+        <td>{{=i.logradouro}}</td>
+        <td>{{=i.numero}}</td>
+        <td></td>
+
+    </tr>
+    <tr>
+        <td>cidade</td>
+        <td>{{=i.cidade}}</td>
+        <td>Estado</td>
+        <td>{{=i.uf}}</td>
+    </tr>
+    <tr>
+     <tr>
+        <td>Status</td>
+        <td>{{=i.ativo}}</td>
+        
+    </tr>
+    <tr>
+        <td><a href="{{=URL('editar_cliente', args=i.id)}}">Editar</a></td>
+    </tr>
+{{pass}}
+</table>
+
+
+{{end}}

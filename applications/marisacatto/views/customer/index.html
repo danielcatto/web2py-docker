@@ -1,0 +1,17 @@
+
+{{extend 'base.html'}}
+
+{{block central}}
+
+<h1>Clientes</h1>
+<ul>
+    {{for cliente in query:}}
+    <li>
+        <a href="{{=URL('customer_detail', args=cliente.id)}}">{{=cliente.id}}</a>
+        Nome: <a href="{{=URL('customer_detail', args=cliente.id)}}">{{=cliente.nome}}</a> |
+        <a href="{{=URL('customer_edit', args=cliente.id)}}">Editar</a> 
+    </li>
+    {{pass}}
+    
+</ul>
+{{end}}
